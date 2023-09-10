@@ -36,7 +36,7 @@ import pandas as pd
 # print(df.head(1000))
 
 
-#filtrando por CNAE 1 = 6202300 ou CNAE 1 = 4651601 ou CNAE 2 = 6202300 ou CNAE 2 = 4651601. ainda nao estou salvando a consulta
+#filtrando pelos codigos CNAE presentes no array
 cnae_codes = [6202300, 4651601, 6200200, 4651602, 4751201, 6200101, 6200102, 6200103, 6200104, 6200105]
 df = pd.read_csv('dadosFiltrados.csv', encoding='ISO-8859-1', sep=',', low_memory=False)
 df = df[df['CNAE 1'].isin(cnae_codes) | df['CNAE 2'].isin(cnae_codes)]
